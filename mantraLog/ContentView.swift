@@ -11,7 +11,7 @@ struct ContentView: View {
     var body: some View {
         TabView {
             NavigationStack {
-                HomeView()
+                LogView()
             }
             .tabItem {
                 Label("Log", systemImage: "calendar")
@@ -37,26 +37,9 @@ struct ContentView: View {
 }
 
 // Example screens
-struct HomeView: View {
-    var body: some View {
-        VStack {
-            Text("Home Screen")
-                .font(.largeTitle)
-            NavigationLink("Go to Details", destination: DetailView())
-                .padding()
-        }
-    }
-}
-
 struct SettingsView: View {
     var body: some View {
         Text("Settings Screen")
-    }
-}
-
-struct DetailView: View {
-    var body: some View {
-        Text("Detail Screen")
     }
 }
 
