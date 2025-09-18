@@ -9,13 +9,60 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        TabView {
+            NavigationStack {
+                HomeView()
+            }
+            .tabItem {
+                Label("Log", systemImage: "calendar")
+            }
+            
+            NavigationStack {
+                CounterView()
+            }
+            .tabItem {
+                Label("Counter", systemImage: "apple.meditate")
+            }
+
+            NavigationStack {
+                SettingsView()
+            }
+            .tabItem {
+                Label("Settings", systemImage: "gearshape.fill")
+            }
+            
+            
         }
-        .padding()
+    }
+}
+
+// Example screens
+struct HomeView: View {
+    var body: some View {
+        VStack {
+            Text("Home Screen")
+                .font(.largeTitle)
+            NavigationLink("Go to Details", destination: DetailView())
+                .padding()
+        }
+    }
+}
+
+struct SettingsView: View {
+    var body: some View {
+        Text("Settings Screen")
+    }
+}
+
+struct DetailView: View {
+    var body: some View {
+        Text("Detail Screen")
+    }
+}
+
+struct CounterView: View {
+    var body: some View {
+        Text("Counter Screen")
     }
 }
 
